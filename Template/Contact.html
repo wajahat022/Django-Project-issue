@@ -1,0 +1,63 @@
+{%extends 'base.html' %}
+{% block title %} Contact Us {% endblock title %}
+
+
+{%block body %}  
+<div class="container-fluid px-0 mb-3">
+    <img src="https://source.unsplash.com/random/1200x400/?phone,contact" class="d-block w-100" alt="...">
+</div>
+    <h1 class="text-center">Contact Us </h1>
+<div class="container py-4">
+    <form class="row g-3" method="post" action="/Contact">
+      {% csrf_token %}
+        <div class="col-12">
+            <label for="name" class="name">Name</label>
+            <input type="text" class="form-control" id="inputname" name="name" placeholder="Enter Your Name">
+          </div>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" name="Email" id="inputEmail4">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" name="Password" id="inputPassword4">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" class="form-control" id="inputAddress" name="Address" placeholder="1234 Main St">
+        </div>
+    
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" class="form-control" id="inputCity" name="City">
+        </div>
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select" name="State">
+            <option selected>Choose...</option>
+            <option>Punjab</option>
+            <option>Sindh</option>
+            <option>KPK</option>
+            <option>Balouchistan</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip</label>
+          <input type="text" class="form-control" id="inputZip" name="Zipcode">
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              Check me out
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+
+</div>
+
+{%endblock body %}
